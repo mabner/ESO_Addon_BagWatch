@@ -1,0 +1,13 @@
+## Title: BagWatch
+## Author: Abner
+## APIVersion: 101032
+## AddOnVersion: 1
+## Version: 0.0.1
+## Description: Addon used to watch bag space and help with scrapping the cheapest items in case you run out of space.
+
+BagWatch.lua
+
+# This Add-on is not created by, affiliated with, or sponsored by, ZeniMax Media Inc. or its affiliates.
+# The Elder Scrolls® and related logos are registered trademarks or trademarks of ZeniMax Media Inc. in the United States
+# and/or other countries. All rights reserved.
+# Full addons terms and conditions available at https://account.elderscrollsonline.com/add-on-terms
