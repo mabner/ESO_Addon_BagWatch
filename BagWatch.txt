@@ -4,6 +4,7 @@
 ## AddOnVersion: 1
 ## Version: 0.0.1
 ## Description: Addon used to watch bag space and help with scrapping the cheapest items in case you run out of space.
+## SavedVariables: BagWatchSavedVariables
 
 BagWatch.xml
 BagWatch.lua
