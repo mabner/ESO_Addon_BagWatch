@@ -5,6 +5,7 @@
 ## Version: 0.0.1
 ## Description: Addon used to watch bag space and help with scrapping the cheapest items in case you run out of space.
 
+BagWatch.xml
 BagWatch.lua
 
 # This Add-on is not created by, affiliated with, or sponsored by, ZeniMax Media Inc. or its affiliates.
