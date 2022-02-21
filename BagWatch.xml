@@ -1,0 +1,16 @@
+<GuiXml>
+    <Controls>
+        <TopLevelControl name="BagWatchIndicator">
+            <Dimensions x="100" y="25"/>
+            <Anchor point="BOTTOM" relativeTo="GuiRoot" relativePoint="CENTER" offset="-20"/>
+
+            <Controls>
+                <Label name="$(parent)BagWatchLabel" width="200" height="25" font="ZoFontWinH1" inheritAlpha="true"
+                       color="FF0000"
+                       wrapMode="TRUNCATE" verticalAlignment="TOP" horizontalAlignment="CENTER" text="Fighting!">
+                    <Anchor point="TOP" relativeTo="$(parent)" relativePoint="TOP"/>
+                </Label>
+            </Controls>
+        </TopLevelControl>
+    </Controls>
+</GuiXml>
