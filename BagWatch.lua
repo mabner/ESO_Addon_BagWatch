@@ -4,7 +4,9 @@ BagWatch.name = "BagWatch"
 
 function BagWatch:Initialize()
     self.inCombat = IsUnitInCombat("player")
+    self.bagSpace = GetNumBagFreeSlots(1)
     -- Create the BagWatch frame
+    EVENT_MANAGER:RegisterForEvent(self.name, EVENT_PLAYER_COMBAT_STATE, self.OnPlayerCombatState)
 end
 
 -- Event handler
