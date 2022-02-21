@@ -26,12 +26,16 @@ function BagWatch.OnPlayerCombatState(event, inCombat)
     if inCombat ~= BagWatch.inCombat then
         BagWatch.inCombat = inCombat
 
-        if inCombat then
-            d("Entering combat")
-        else
-            d("Exiting combat.")
-        end
+        BagWatchIndicator:SetHidden(not inCombat)
+
+        -- Message in chat
+        --if inCombat then
+        --    d("Entering combat")
+        --else
+        --    d("Exiting combat.")
+        --end
     end
+
 end
 
 -- Registering events
