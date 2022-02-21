@@ -7,6 +7,8 @@ function BagWatch:Initialize()
     self.bagSpace = GetNumBagFreeSlots(1)
     -- Create the BagWatch frame
     EVENT_MANAGER:RegisterForEvent(self.name, EVENT_PLAYER_COMBAT_STATE, self.OnPlayerCombatState)
+    self.savedVariables = ZO_SavedVars:NewAccountWide("BagWatchSavedVariables", 1, nil, {})
+
 end
 
 -- Event handler
