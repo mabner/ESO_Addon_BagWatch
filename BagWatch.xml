@@ -1,21 +1,19 @@
 <GuiXml>
     <Controls>
-        <TopLevelControl name="BagWatchIndicator" mouseEnabled="true" movable="true" clampedToScreen="true"
-                         hidden="true">
-            <Dimensions x="100" y="25" />
-            <Anchor point="BOTTOM" relativeTo="GuiRoot" relativePoint="CENTER" offset="-20" />
+        <TopLevelControl name="BagWatchIndicator" mouseEnabled="true" movable="true" clampedToScreen="false">
+            <Dimensions x="80" y="80"/>
+            <Anchor point="TOPRIGHT"/>
             <OnInitialized>
-                BagWatchIndicator:SetHidden(not IsUnitInCombat('player'))
+                BagWatchIndicator:SetHidden(IsUnitInCombat('player'))
             </OnInitialized>
             <OnMoveStop>
                 BagWatch.OnIndicatorMoveStop()
             </OnMoveStop>
 
             <Controls>
-                <Label name="$(parent)BagWatchLabel" width="200" height="25" font="ZoFontWinH1" inheritAlpha="true"
-                       color="FF0000"
-                       wrapMode="TRUNCATE" verticalAlignment="TOP" horizontalAlignment="CENTER" text="In combat">
-                    <Anchor point="TOP" relativeTo="$(parent)" relativePoint="TOP" />
+                <Label name="BagWatchSpace" font="ZoFontWindowTitle" color="CFDCBD" wrapMode="ELLIPSIS"
+                       verticalAlignment="TOPLEFT" text="BagSpace">
+                    <AnchorFill/>
                 </Label>
             </Controls>
         </TopLevelControl>

@@ -1,0 +1,9 @@
+<Bindings>
+    <Layer name="SI_LAYER_NAME_STRING">
+        <Category name="SI_CATEGORY_NAME_STRING">
+            <Action name="DELETE_CHEAPEST">
+
+            </Action>
+        </Category>
+    </Layer>
+</Bindings>

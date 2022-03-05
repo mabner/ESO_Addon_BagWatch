@@ -9,8 +9,14 @@ function BagWatch.OnAddOnLoaded(event, addonName)
     end
 end
 
-function OnBagUpdate(event, bagId)
-    -- Update the BagWatch frame
+function BagWatch.OnBagUpdate(event, bagId)
+
+
+end
+
+local function _onInventoryChanged(eventCode, bagId, slotIndex, isNewItem, itemSoundCategory, updateReason, stackCountChange)
+    local link = GetItemLink(bagId, slotIndex)
+    d("Item: " .. link .. ".")
 end
 
 function BagWatch.OnPlayerCombatState(event, inCombat)
@@ -46,6 +52,7 @@ end
 function BagWatch:Initialize()
     self.inCombat = IsUnitInCombat("player")
     self.bagSpace = GetNumBagFreeSlots(1)
+    BagWatchSpace:SetText(bagSpace)
 
     -- Create the BagWatch frame
     EVENT_MANAGER:RegisterForEvent(self.name, EVENT_PLAYER_COMBAT_STATE, self.OnPlayerCombatState)
@@ -60,5 +67,12 @@ end
 
 -- Registering events
 EVENT_MANAGER:RegisterForEvent(BagWatch.name, EVENT_ADD_ON_LOADED, BagWatch.OnAddOnLoaded)
+--EVENT_MANAGER:RegisterForEvent(BagWatch.name, EVENT_INVENTORY_SINGLE_SLOT_UPDATE, BagWatch.OnBagUpdate)
 
+EVENT_MANAGER:RegisterForEvent("ItemPickUp", EVENT_INVENTORY_SINGLE_SLOT_UPDATE, _onInventoryChanged)
+EVENT_MANAGER:AddFilterForEvent("ItemPickUp", EVENT_INVENTORY_SINGLE_SLOT_UPDATE, REGISTER_FILTER_IS_NEW_ITEM, true)
+EVENT_MANAGER:AddFilterForEvent("ItemPickUp", EVENT_INVENTORY_SINGLE_SLOT_UPDATE, REGISTER_FILTER_BAG_ID, BAG_BACKPACK)
+EVENT_MANAGER:AddFilterForEvent("ItemPickUp", EVENT_INVENTORY_SINGLE_SLOT_UPDATE, REGISTER_FILTER_INVENTORY_UPDATE_REASON, INVENTORY_UPDATE_REASON_DEFAULT)
+
+--ZO_CreateStringId("SI_BINDING_NAME_DELETE_CHEAPEST", "Delete cheapest")
 -- GetNumBagFreeSlots(1)
